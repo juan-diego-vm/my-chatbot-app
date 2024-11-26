@@ -44,7 +44,7 @@ const MyChatBot = () => {
 			hasError = false; 
 			return "loop";
 			},
-			isSensitive: true,
+			// isSensitive: true,
 		},
 
 		loop: {
@@ -60,7 +60,8 @@ const MyChatBot = () => {
 		}
 	}
 	return (
-		<ChatBot settings={{general: {embedded: true}, chatHistory: {storageKey: "example_llm_conversation"}}} flow={flow}/>
+		// <ChatBot settings={{general: {embedded: true}, chatHistory: {storageKey: "example_llm_conversation"}}} flow={flow}/>
+		<ChatBot flow={flow}/>
 	);
 };
 
