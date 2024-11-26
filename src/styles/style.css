@@ -56,9 +56,9 @@
 }
 
 .rcb-chat-body-container {
-    position:relative;
-    height:100%;
-    width:50vh;
+    position:relative !important;
+    height:50vh !important;
+    width:100%;
     padding-bottom:16px;
     overflow-x:hidden;
     overflow-y:scroll;
@@ -898,9 +898,9 @@
 }
 
 .rcb-chat-window {
-    /* position:fixed;
+    position:static !important;
     right:20px;
-    bottom:20px; */
+    bottom:20px;
     border-radius:10px;
     box-shadow:0 2px 4px #0003;
     background-color:#fff;
@@ -909,8 +909,8 @@
     display:flex;
     flex-direction:column;
     margin: 50px;
-    /* width:375px;
-    height:550px */
+    width:auto !important;
+    height:auto !important;
 }
 
 .rcb-window-embedded 

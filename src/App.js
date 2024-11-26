@@ -1,7 +1,6 @@
 import ChatBot from "react-chatbotify";
 // import Settings from "react-chatbotify/dist/types/Settings"
 
-
 const MyChatBot = () => {
 	let hasError = false;
 
@@ -64,10 +63,17 @@ const MyChatBot = () => {
 	return (
 		// <ChatBot flow={flow}	/>
 
-		<ChatBot settings = {{header: 
-		{title: <div style={{ cursor: 'pointer', margin: '0px', fontSize: '20px', fontWeight: 'bold' }}>
-			Amalia
-	  </div>}}} flow={flow}/>
+		<ChatBot settings = {
+			{
+				header: {title: <div style={{ cursor: 'pointer', margin: '0px', fontSize: '20px', fontWeight: 'bold' }}>
+					Amalia
+	  			</div>
+				},
+				chatWindow: {
+					defaultOpen:true
+				}
+			}
+		} flow={flow}/>
 	);
 };
 
