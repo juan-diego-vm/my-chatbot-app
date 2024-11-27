@@ -1,5 +1,4 @@
 import ChatBot from "react-chatbotify";
-// import Settings from "react-chatbotify/dist/types/Settings"
 
 const MyChatBot = () => {
 	let hasError = false;
@@ -7,6 +6,7 @@ const MyChatBot = () => {
 	// example openai conversation
 	// you can replace with other LLMs such as Google Gemini
 	const call_amalia = async (params) => {
+	console.log(`params: ${JSON.stringify(params, null, 2)}`);
     try {
         const response = await fetch('https://chats.mytrip.ai/amalia-assistant/chat', {
             method: 'POST',
@@ -37,7 +37,8 @@ const MyChatBot = () => {
         await params.injectMessage("Unable to connect to the chat service. Please try again.");
         hasError = true;
     }
-};
+	};
+
 	const flow={
 		start: {
 			message: "Hello! My name is Amalia, how can I help you today?",
@@ -60,22 +61,29 @@ const MyChatBot = () => {
 			}
 		}
 	}
+	
 	return (
 		// <ChatBot flow={flow}	/>
 
 		<ChatBot settings = {
 			{
-				header: {title: <div style={{ cursor: 'pointer', margin: '0px', fontSize: '20px', fontWeight: 'bold' }}>
-					Amalia
-	  			</div>
+				header: {
+					title: <div style={{ cursor: 'pointer', margin: '0px', fontSize: '20px', fontWeight: 'bold' }}>Amalia</div>
 				},
 				chatWindow: {
-					defaultOpen:true
-				}
+					defaultOpen:true,
+					showScrollbar:true,
+					autoJumpToBottom:true,
+				},
+				userBubble: {
+					showAvatar: true,
+				},
+				botBubble: {
+					showAvatar: true
+				},
 			}
 		} flow={flow}/>
 	);
 };
 
-// render(<MyChatBot/>)/
 export default MyChatBot;
